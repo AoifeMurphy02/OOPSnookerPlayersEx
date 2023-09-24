@@ -30,5 +30,13 @@ public class MainApp {
         uKMasters.addPlayer(player2);
 
         System.out.println( "total prize one: "+uKMasters.totalPlayersPrize());
+        uKMasters.sortPlayers();
+        System.out.println(uKMasters);
+
+        worldChampionship.sortPlayers();
+        System.out.println(worldChampionship);
+
+        worldChampionship.result("dan","becca");
+        System.out.println(worldChampionship);
     }
 }

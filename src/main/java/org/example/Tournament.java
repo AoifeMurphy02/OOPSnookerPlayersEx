@@ -1,5 +1,7 @@
 package org.example;
 import java.util.ArrayList;
+import java.util.Collections;
+
 public class Tournament {
     private String name;
     private double totalPrizeMoney;
@@ -11,6 +13,7 @@ public class Tournament {
         this.snookerPlayers = new ArrayList<>();
 
     }
+
     public Tournament(String name, double totalPrizeMoney, ArrayList<SnookerPlayer> snookerPlayers) {
         this.name = name;
         this.totalPrizeMoney = totalPrizeMoney;
@@ -50,28 +53,57 @@ public class Tournament {
                 ", snookerplayer=" + snookerPlayers +
                 '}';
     }
-    public void IncreaseAll(double amount){
-    for(SnookerPlayer player : snookerPlayers){
-        player.increasePrizeMoney(amount);
-    }
+
+    public void IncreaseAll(double amount) {
+        for (SnookerPlayer player : snookerPlayers) {
+            player.increasePrizeMoney(amount);
+        }
 
     }
-    public void addPlayer(SnookerPlayer player){
+
+    public void addPlayer(SnookerPlayer player) {
         snookerPlayers.add(player);
     }
-    public void displayPerf(){
+
+    public void displayPerf() {
         System.out.println("Snooker Player Performance Table - " + name);
         System.out.println("Player Name" + "Games Played" + "Games Won" + "Prize Money");
         for (SnookerPlayer player : snookerPlayers) {
             System.out.println(
-                    player.getName() +"     "+ player.getGamesPlayed() +"        "+ player.getGamesWon() +"       "+ player.getPrizeMoney());
+                    player.getName() + "     " + player.getGamesPlayed() + "        " + player.getGamesWon() + "       " + player.getPrizeMoney());
         }
     }
-    public double totalPlayersPrize(){
-    double totalPrizeMoney = 0.0;
-    for(SnookerPlayer player : snookerPlayers){
-        totalPrizeMoney += player.getPrizeMoney();
+
+    public double totalPlayersPrize() {
+        double totalPrizeMoney = 0.0;
+        for (SnookerPlayer player : snookerPlayers) {
+            totalPrizeMoney += player.getPrizeMoney();
+        }
+        return totalPrizeMoney;
     }
-    return totalPrizeMoney;
+
+    public void sortPlayers() {
+        Collections.sort(snookerPlayers);
     }
+    public void result(String winnerName, String loserName){
+        SnookerPlayer winner = null;
+        SnookerPlayer looser = null;
+
+        for(SnookerPlayer player : snookerPlayers){
+            if(player.getName().equals(winnerName)){
+                winner = player;
+            }else if(player.getName().equals(loserName)){
+                looser = player;
+            }
+        }
+
+        if(winner != null && looser != null){
+            winner.updatePerformance(true);
+            looser.updatePerformance(false);
+            System.out.println("update made the winner was: " + winnerName );
+        }
+
+
+    }
+
 }

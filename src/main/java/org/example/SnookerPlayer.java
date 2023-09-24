@@ -1,6 +1,8 @@
 package org.example;
 
-public class SnookerPlayer {
+import java.util.Objects;
+
+public class SnookerPlayer implements Comparable<SnookerPlayer> {
     //i.	Fields for name, nationality, prize money won at the tournament, number of games played and number of games won at the tournament by the snooker player.
     private String name;
     private String nationality;
@@ -12,7 +14,7 @@ public class SnookerPlayer {
 
     }
 
-    public SnookerPlayer(String name, String nationality, double prizeMoney, int gamesPlayed, int gamesWon ) {
+    public SnookerPlayer(String name, String nationality, double prizeMoney, int gamesPlayed, int gamesWon) {
         this.name = name;
         this.nationality = nationality;
         this.prizeMoney = prizeMoney;
@@ -70,16 +72,23 @@ public class SnookerPlayer {
                 ", gamesWon=" + gamesWon +
                 '}';
     }
-    public double increasePrizeMoney(double amount){
 
-        return prizeMoney+=amount;
+    public double increasePrizeMoney(double amount) {
+
+        return prizeMoney += amount;
     }
 
-    public int updatePerformance(boolean won){
-        if(won){
-           gamesWon+=1;
+    public int updatePerformance(boolean won) {
+        if (won) {
+            gamesWon += 1;
         }
         gamesPlayed++;
         return gamesWon;
+    }
+
+
+    @Override
+    public int compareTo(SnookerPlayer player) {
+        return Integer.compare(player.getGamesWon(), this.getGamesWon());
     }
 }
