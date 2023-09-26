@@ -1,6 +1,7 @@
 package org.example;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 public class Tournament {
     private String name;
@@ -85,25 +86,46 @@ public class Tournament {
     public void sortPlayers() {
         Collections.sort(snookerPlayers);
     }
-    public void result(String winnerName, String loserName){
+
+    public void result(String winnerName, String loserName) {
         SnookerPlayer winner = null;
         SnookerPlayer looser = null;
 
-        for(SnookerPlayer player : snookerPlayers){
-            if(player.getName().equals(winnerName)){
+        for (SnookerPlayer player : snookerPlayers) {
+            if (player.getName().equals(winnerName)) {
                 winner = player;
-            }else if(player.getName().equals(loserName)){
+            } else if (player.getName().equals(loserName)) {
                 looser = player;
             }
         }
 
-        if(winner != null && looser != null){
+        if (winner != null && looser != null) {
             winner.updatePerformance(true);
             looser.updatePerformance(false);
-            System.out.println("update made the winner was: " + winnerName );
+            System.out.println("update made the winner was: " + winnerName);
         }
-
-
     }
 
+    //g.	Develop and test a method named playTournament in the Tournament class to play the tournament. Each player should play each other player once. The winner should be decided based on a random number. Initially each player should have an equal chance of winning. Update the player objects appropriately
+    public void playTournament() {
+        Random random = new Random();
+        for (int i = 0; i < snookerPlayers.size(); i++) {
+            SnookerPlayer player1 = snookerPlayers.get(i);
+            for (int j = i + 1; j < snookerPlayers.size(); j++) {
+                SnookerPlayer player2 = snookerPlayers.get(j);
+// Generate a random number to decide the winner (0 or 1)
+                int winnerIndex = random.nextInt(2);
+
+                // Update player objects based on the outcome of the match
+                if (winnerIndex == 0) {
+                    player1.updatePerformance(true); // Player 1 wins
+                    player2.updatePerformance(false); // Player 2 loses
+                } else {
+                    player1.updatePerformance(false); // Player 1 loses
+                    player2.updatePerformance(true); // Player 2 wins
+                }
+            }
+        }
+    }
 }
+

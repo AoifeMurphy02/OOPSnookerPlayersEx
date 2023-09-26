@@ -38,5 +38,8 @@ public class MainApp {
 
         worldChampionship.result("dan","becca");
         System.out.println(worldChampionship);
+        System.out.println(uKMasters);
+      uKMasters.playTournament();
+        System.out.println(uKMasters);
     }
 }
