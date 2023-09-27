@@ -89,6 +89,12 @@ public class SnookerPlayer implements Comparable<SnookerPlayer> {
 
     @Override
     public int compareTo(SnookerPlayer player) {
-        return Integer.compare(player.getGamesWon(), this.getGamesWon());
+        if(this.prizeMoney < player.prizeMoney){
+            return -1;
+        } else if (this.prizeMoney > player.prizeMoney) {
+            return 1;
+
+        }
+        return 0;
     }
 }

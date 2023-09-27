@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="464eaac6-981e-4b06-81c2-b1f400c6ebef" name="Changes" comment="added sort and result methods">
+    <list default="true" id="464eaac6-981e-4b06-81c2-b1f400c6ebef" name="Changes" comment="Added playTourament method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/SnookerPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/SnookerPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tournament.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tournament.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695585056651</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added playTourament method">
+      <created>1695750470725</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1695750470725</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -126,6 +133,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Tournament class and MainApp" />
     <MESSAGE value="added sort and result methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="added sort and result methods" />
+    <MESSAGE value="Added playTourament method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added playTourament method" />
   </component>
 </project>

@@ -85,6 +85,7 @@ public class Tournament {
 
     public void sortPlayers() {
         Collections.sort(snookerPlayers);
+        System.out.println(snookerPlayers);
     }
 
     public void result(String winnerName, String loserName) {
